@@ -27,9 +27,7 @@ const configStore = (loadStore = {}) => {
     const store = createStore(
         rootReducerPersist,
         loadStore,
-        composeWithDevTools(
-            applyMiddleware(routerMiddleware(history), sagaMiddleware, logger)
-        )
+        applyMiddleware(routerMiddleware(history), sagaMiddleware, logger)
     );
 
     sagaMiddleware.run(rootSaga);

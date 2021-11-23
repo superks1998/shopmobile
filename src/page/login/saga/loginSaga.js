@@ -56,8 +56,6 @@ export function* loginSagaFlowing() {
     while (true) {
         // Thuc su se theo doi loginSaga khi co action cua user lay ra du lieu nguoi dung nhap
         const { user, pass } = yield take(types.LOGIN_REQUEST);
-
-        console.log(user, pass);
         // Theo doi re nhanh loginSaga
         const taskLogin = yield fork(loginSaga, user, pass);
         // Khi co hanh dong logout hoac login error thi dung hanh dong login lai

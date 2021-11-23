@@ -25,10 +25,10 @@ function App() {
                             <Route path="/cart">
                                 <CartPage />
                             </Route>
-                            <Route>
+                            <Route exact path="/login">
                                 <LoginPage />
                             </Route>
-                            <Route path="/">
+                            <Route exact path="/">
                                 <HomePage />
                             </Route>
                         </Switch>
