@@ -5,10 +5,12 @@ import { Provider } from "react-redux";
 import { Switch, Route } from "react-router-dom";
 import { PersistGate } from "redux-persist/integration/react";
 
-import CartPage from "./page/cart";
 import HomePage from "./page/home";
+import CartPage from "./page/cart";
+import CheckoutPage from "./page/cart/checkout";
 import LoginPage from "./page/login";
 import configStore from "./redux/store";
+import SignupPage from "./page/signup";
 
 const { store, persistor, history } = configStore();
 
@@ -25,8 +27,14 @@ function App() {
                             <Route path="/cart">
                                 <CartPage />
                             </Route>
+                            <Route path="/checkout">
+                                <CheckoutPage />
+                            </Route>
                             <Route exact path="/login">
                                 <LoginPage />
+                            </Route>
+                            <Route exact path="/signup">
+                                <SignupPage />
                             </Route>
                             <Route exact path="/">
                                 <HomePage />

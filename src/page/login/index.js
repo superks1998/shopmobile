@@ -2,8 +2,8 @@ import React from "react";
 
 import FormLogin from "./components/formLogin";
 
-const Login = () => {
+const LoginPage = () => {
     return <FormLogin />;
 };
 
-export default React.memo(Login);
+export default LoginPage;

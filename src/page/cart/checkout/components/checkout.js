@@ -22,6 +22,10 @@ const CheckoutComponent = () => {
                         Neu co da co tai khoan bam vao{" "}
                         <Link to="/login">Day</Link> de dang nhap
                     </p>
+                    <p>
+                        Neu chua cos tai khoan bam vao{" "}
+                        <Link to="/login">Day</Link> dang ky
+                    </p>
                 </Col>
             </Row>
         </>

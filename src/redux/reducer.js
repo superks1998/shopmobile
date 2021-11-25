@@ -7,6 +7,7 @@ import productsReducer from "../page/home/reducers/homeReducer";
 import cartReducer from "../page/cart/reducer/cartReducer";
 import { loginReducer } from "../page/login/reducers/loginReducer";
 import { tokenReducer } from "../page/login/reducers/tokenReducer";
+import signupReducer from "../page/signup/reducer/signupReducer";
 
 const configPersistToken = {
     key: "token-persist",
@@ -27,6 +28,7 @@ const rootReducer = (history) =>
         router: connectRouter(history),
         auth: persistReducer(configPersistToken, tokenReducer),
         login: loginReducer,
+        signup: signupReducer,
     });
 
 export default rootReducer;

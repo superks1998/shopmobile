@@ -1,29 +1,27 @@
 import React from "react";
 import { Button, Col, Row, Form, Input, Spin } from "antd";
-import { loginRequest } from "../actions/index";
 import { useSelector, useDispatch } from "react-redux";
 import { push } from "connected-react-router";
+import { signupRequest } from "../actions";
 import { NavLink } from "react-router-dom";
 
-const FormLogin = () => {
+const FormSignup = () => {
     const dispatch = useDispatch();
 
-    const { loading, errorMessage } = useSelector((state) => state.login);
-
     const onFinish = (values) => {
-        dispatch(loginRequest(values.username, values.password));
+        dispatch(signupRequest(values.username, values.password));
     };
 
-    const onFinishFailed = (error) => {};
+    const { loading, message } = useSelector((state) => state.signup);
 
     return (
         <>
             <Row>
                 <Col span={12} offset={6} style={{ textAlign: "center" }}>
-                    <h1>Login</h1>
-                    {errorMessage !== null ? (
+                    <h1>Sign Up</h1>
+                    {message !== null ? (
                         <p style={{ color: "red", padding: "10px" }}>
-                            {errorMessage}
+                            {message}
                         </p>
                     ) : null}
                 </Col>
@@ -103,7 +101,7 @@ const FormLogin = () => {
                             }}
                         >
                             <Button type="primary">
-                                <NavLink to="/signup">Sign Up</NavLink>
+                                <NavLink to="/login">Login</NavLink>
                             </Button>
                         </Form.Item>
                     </Form>
@@ -124,4 +122,4 @@ const FormLogin = () => {
     );
 };
 
-export default FormLogin;
+export default FormSignup;

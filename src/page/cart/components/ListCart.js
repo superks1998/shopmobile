@@ -1,6 +1,8 @@
-import { Button, Col, Image, InputNumber, Row } from "antd";
 import React from "react";
+import { Button, Col, Image, InputNumber, Row } from "antd";
 import { useDispatch, useSelector } from "react-redux";
+import { push } from "connected-react-router";
+
 import { handleMoney } from "../../../helpers/handleMoney";
 import { changeQtyCart, deleteItemCart } from "../actions";
 
@@ -15,6 +17,10 @@ function ListCart() {
 
     const handleChangeQtyItem = (id, qty) => {
         dispatch(changeQtyCart(id, qty));
+    };
+
+    const goToCheckout = () => {
+        dispatch(push("/checkout"));
     };
 
     return (
@@ -82,7 +88,7 @@ function ListCart() {
                         <Button
                             type="primary"
                             style={{ float: "right" }}
-                            // onClick={() => gotoCheckout()}
+                            onClick={() => goToCheckout()}
                         >
                             Checkout
                         </Button>

@@ -28,7 +28,8 @@ function* loginSaga(user, pass) {
             yield put(actions.loginFailed("Username or password invalid!"));
         }
     } catch (error) {
-        yield put(actions.loginFailed("Username or password invalid"));
+        console.log(error);
+        yield put(actions.loginFailed("Username or password invalid!"));
     } finally {
         // Khong the truy cap ket noi api
         if (yield cancelled()) {
